@@ -1,6 +1,12 @@
+// IMPORT REACT / APP STYLES
 import React from 'react';
 import './App.css';
 
+// IMPORT COMPONENTS
+import '../GalleryList/GalleryList.jsx';
+import '../GalleryItem/GalleryItem.jsx';
+
+// APP MODULE
 function App() {
     return (
       <div className="App">
@@ -13,4 +19,5 @@ function App() {
     );
 }
 
+// EXPORT APP
 export default App;
