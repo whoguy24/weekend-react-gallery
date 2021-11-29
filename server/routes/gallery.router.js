@@ -13,8 +13,7 @@ router.get('/', (req, res) => {
     pool.query(sqlText)
     .then((result) => {
         console.log(`GET request from database:`, result);
-        res.sendStatus(200);
-        // res.send(result.rows);
+        res.send(result.rows);
     })
     .catch((error) => {
         console.log(`GET request from database failed:`, error);
