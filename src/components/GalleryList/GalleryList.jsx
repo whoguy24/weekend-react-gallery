@@ -1,6 +1,14 @@
-function GalleryList () {
+import GalleryItem from '../GalleryItem/GalleryItem.jsx'
+
+function GalleryList ({gallery}) {
     return (
-        console.log('GalleryList')
+        <ul>
+            {gallery.map(galleryItem => (
+                <li key={galleryItem.id}>
+                    <GalleryItem galleryItem={galleryItem} />
+                </li>
+            ))}
+        </ul>
     )
 }
 

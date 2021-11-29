@@ -7,12 +7,11 @@ import {useState, useEffect} from 'react';
 
 // IMPORT COMPONENTS
 import GalleryList from '../GalleryList/GalleryList.jsx';
-import GalleryItem from '../GalleryItem/GalleryItem.jsx';
 
 // APP MODULE
 function App() {
 
-  const [galleryList, setGalleryList] = useState([]);
+  const [gallery, setGallery] = useState([]);
 
   useEffect(() => {
     loadGalleryItems();
@@ -23,21 +22,15 @@ function App() {
       method: 'GET',
       url: '/gallery'
     }).then((response) => {
-      console.log('Gallery List:', galleryList);
-      setGalleryList(response.data);
+      console.log('GET request from server:', response.data);
+      setGallery(response.data);
     }).catch((error) => {
       console.log(error);
     });
   };
 
-
-
   return (
-
-      <GalleryItem />
-
-
-
+    <GalleryList gallery={gallery}/>
   )
 }
 
