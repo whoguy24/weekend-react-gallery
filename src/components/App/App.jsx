@@ -17,6 +17,10 @@ function App() {
     loadGalleryItems();
   },[]);
 
+  function handleLikeClick() {
+    console.log('Yay');
+  }
+
   function loadGalleryItems() {
     axios({
       method: 'GET',
@@ -30,7 +34,7 @@ function App() {
   };
 
   return (
-    <GalleryList gallery={gallery}/>
+    <GalleryList gallery={gallery} handleLikeClick={handleLikeClick}/>
   )
 }
 

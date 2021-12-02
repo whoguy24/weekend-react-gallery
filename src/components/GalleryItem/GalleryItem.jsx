@@ -1,15 +1,10 @@
-import {useState} from 'react';
-
-function GalleryItem () {
-
-    const [likes, setLikeCount] = useState(0);
-    // const [displayDescription, toggleDescription] = useState(false);
+function GalleryItem ({galleryItem, handleLikeClick}) {
 
     return (
         <div className="gallery-item">
-            <img src="images/goat_small.jpg"/>
-            <button className ="button-like">Click me</button>
-            <p>{likes} People love this!</p>
+            <img src={galleryItem.filepath}/>
+            <button className ="button-like" onClick={handleLikeClick}>Click me</button>
+            <p>{galleryItem.likes} like this.</p>
         </div>
     )
 }
