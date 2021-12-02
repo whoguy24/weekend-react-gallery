@@ -23,7 +23,10 @@ router.get('/', (req, res) => {
 })
 
 // PUT ROUTE
-router.put('/like/:id', (req, res) => {
+router.put('/:id', (req, res) => {
+
+    console.log('In PUT route.');
+    
 
     // Retrieve ID, Value to Modify
     const galleryItemID = req.params.id;
@@ -112,17 +115,5 @@ router.delete('/:id', (req, res) => {
     })
     
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router;

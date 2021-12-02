@@ -17,8 +17,15 @@ function App() {
     loadGalleryItems();
   },[]);
 
-  function handleLikeClick() {
-    console.log('Yay');
+  function handleLikeClick(galleryItem) {
+    axios({
+      method: 'PUT',
+      url: `/gallery/${galleryItem.id}`,
+      data: galleryItem
+    })
+    .then((res) => {
+      loadGalleryItems();
+    })
   }
 
   function loadGalleryItems() {
